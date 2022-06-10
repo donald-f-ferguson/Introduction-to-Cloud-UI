@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="width: 50rem;">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              <h3>Student Information</h3>
+            </div>
+            <div class="col">
+              <button class="btn btn-link collapsed float-end" data-toggle="collapse" data-target="#collapse-L1"
+                      aria-expanded="true" aria-controls="collapse1" (click)="toggleStudents()">
+                <i class="fa fa-plus-square" style="font-size:18px;color:black"></i></button>
+            </div>
+          </div>
+        </div>
+        <div id="collapse-L1" *ngIf="showStudents">
+          Students  will go here!
+          <label>Type in an student UNI: </label><input type="text" class="form-control"
+                                                          [(ngModel)]="studentUni">
+          <p></p>
+          <button type="button" (click)="onLookup()" class="btn btn-primary">Search</button>
+        </div>
+
+        <div class="card" *ngIf="allStudents">
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">UNI</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Email</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let p of allStudents; index as i">
+                <td>
+                  {{ p.uni }}
+                </td>
+                <td>{{p.last_name }}</td>
+                <td>{{ p.first_name }}</td>
+                <td>{{p.email}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="width: 50rem;">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              <h3>Player Information</h3>
+            </div>
+            <div class="col">
+              <button class="btn btn-link collapsed float-end" data-toggle="collapse" data-target="#collapse-L1"
+                      aria-expanded="true" aria-controls="collapse1" (click)="toggleStudents()">
+                <i class="fa fa-plus-square" style="font-size:18px;color:black"></i></button>
+            </div>
+          </div>
+        </div>
+        <div id="collapse-L2" *ngIf="showStudents">
+          <div class="card-body">Some information about
+            <a href="http://www.seanlahman.com/baseball-archive/statistics/">Lahman's 2020
+              Baseball Databases</a> People will go here!
+          </div>
+          <p>
+            For example, the player's last name could be: {{ currentStudent }}
+          </p>
+          <p>A list of players last names might be:</p>
+          <ol>
+            <li *ngFor="let p of allStudents;">{{p.last_name }}</li>
+          </ol>
+          <p>And shown in a table.</p>
+
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">playerID</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">First Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let p of allStudents; index as i">
+              <td>
+                {{ p.uni }}
+              </td>
+              <td>{{p.last_name }}</td>
+              <td>{{ p.first_name }}</td>
+            </tr>
+            </tbody>
+          </table>
+
+          <p>
+            At this point, it would be really cool to allow someone to enter a name or something else and:
+          </p>
+          <ol>
+            <li>Somehow calling an application or database.</li>
+            <li>Showing only the players that match the search criteria.</li>
+            <li>That might make an excellent homework or project assignment.</li>
+          </ol>
+        </div>
+
+        <div class="card" *ngIf="showStudents">
+          <div class="card-body">
+            <form>
+              <label>Type something ...</label><input type="text" class="form-control"
+                                                      (input)="onSomethingInput($event)">
+            </form>
+            You typed: <span *ngIf="testInp"> "{{ testInp }}" </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+</div>
+
