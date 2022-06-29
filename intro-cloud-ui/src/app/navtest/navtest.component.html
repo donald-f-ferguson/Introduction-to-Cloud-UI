@@ -1,0 +1,17 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]=1>
+    <a ngbNavLink>Snuffleupagus</a>
+    <ng-template ngbNavContent>
+      <app-snuffle></app-snuffle>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>Intro to Cloud Apps</a>
+    <ng-template ngbNavContent>
+      <app-intro-to-cloud></app-intro-to-cloud>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
